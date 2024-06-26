@@ -17,3 +17,7 @@ Alt + p
 ### Mandar al stage un fichero
 
 Alt + s
+
+### Quitar del stage un fichero 
+
+Alt + z
