@@ -215,3 +215,8 @@ los sistemas para que sobrevivan a un error temporal o prolongado de una zona de
 + Equipos de red personalizados de AWS:
 	+ Provenientes de varios ODM
 	+ Tienen una pila de protocolo de red personalizada
+### Puntos de presencia de AWS
+
+Amazon CloudFront utiliza una red global que incluye más de 200 puntos de presencia que se componen de ubicaciones perimetrales y cachés perimetrales regionales.
+
+Las cachés perimetrales regionales se utilizan de forma con Amazon CloudFront. Se utilizan cuando tiene contenido al que no se accede con la frecuencia suficiente para que permanezca en una ubicación perimetral. Las cachés perimetrales regionales absorben este contenido y proporcionan una alternativa a recuperar ese contenido del servidor de origen.
