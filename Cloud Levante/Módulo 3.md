@@ -49,3 +49,8 @@ Herramientas y opciones para controlar el acceso a los datos de Amazon S3:
 + **URL prefirmadas**: Puede conceder acceso limitado a objetos con URL temporales.
 + Comprobación de permisos de bucket de **AWS Trusted Advisor**: una función gratuita.
 
+#### Tres enfoques generales para configurar el acceso
+
+Configure la configuración de seguridad apropiada para su caso práctico en el bucket y los objetos.
+
++ **Configuración de seguridad predeterminada de Amazon S3:** De forma predeterminada, los buckets de Amazon S3 y los objetos almacenados en ellos son privados (están protegidos). Las únicas entidades con acceso a un bucket recién creado sin modificar son el administrador de la cuenta y el usuario
