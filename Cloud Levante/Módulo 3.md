@@ -31,3 +31,16 @@ Cada objeto tiene *cinco características* consistentes:
 	+ Muchos patrones de diseño lo admiten
 
 Amazon S3 está diseñado para sostener errores de dispositivos simultáneos detectando con rapidez y reparando cualquier redundancia perdida. Amazon S3 también verifica con regularidad la integridad de sus datos mediante sumas de verificación.
+
+#### Protección de buckets y objetos de Amazon S3
+
+Los buckets y objetos que se crean recientemente son privados y están protegidos de forma predeterminada.
+
+Cuándo los casos prácticos deben compartir datos de Amazon S3:
++ Administre y controle el acceso a los datos
++ Siga el principio de mínimo privilegio
+
+Herramientas y opciones para controlar el acceso a los datos de Amazon S3:
++ **Función de bloqueo de acceso público**: está habilitada en buckets nuevos de forma predeterminada y es fácil de administrar.
++ 
+
