@@ -68,3 +68,9 @@ Configure la configuración de seguridad apropiada para su caso práctico en el 
 + Cifrado del cliente
 	+ Cifre los datos en el lado del cliente y cargue los datos cifrados en Amazon S3
 	+ En este caso, usted administra el proceso de cifrado
+
+#### Clases de almacenamiento de Amazon S3 y Amazon S3 Glacier
+
+##### S3 Standard
+
+Ofrece almacenamiento de objetos de de durabilidad, disponibilidad y rendimiento elevados para los datos de acceso frecuente. Debido a que ofrece baja latencia y alto rendimiento, S3 Standard es adecuado para una amplia variedad de casos prácticos, como las aplicaciones en la nube, los sitios web dinámicos, la distribución de contenido, las aplicaciones para dispositi
