@@ -15,3 +15,19 @@ Cada objeto tiene *cinco características* consistentes:
 + El *valor* del objeto es el contenido real que almacena. Puede ser una secuencia de *bytes*. Los valores del objeto son inmutables, es decir que después de que carga un objeto, no puede modificar el valor. Si desea modificar el objeto, debe hacer un cambio fuera de Amazon S3 y volver a cargar el objeto.
 + Los objetos también incluyen metadatos, que es un conjunto de pares de nombre-valor que puede usar para almacenar información sobre el objeto. Puede asignar metadatos, los que se denominan *metadatos definidos por el usuario*, a sus objetos en Amazon S3. Amazon S3 también asigna metadatos del sistema a estos objetos, que utiliza para administrar objetos.
 + Amazon S3 también usa sobrecursos para almacenar información adicional específica del objeto.
+##### Beneficios de Amazon S3
++ Durabilidad
+	+ Garantiza que no se pierdan los datos
+	+ El almacenamiento de S3 Standard ofrece 11 nueves de durabilidad
++ Disponibilidad
+	+ Puede acceder a sus datos cuando lo necesita
+	+ La clase de almacenamiento de S3 Standard está diseñada para cuatro nueves de disponibilidad
++ Escalabilidad
+	+ Ofrece capacidad prácticamente ilimitada
+	+ Cualquier objeto único de 5 TB o menos
++ Seguridad
+	+ Ofrece control de acceso detallado
++ Rendimiento
+	+ Muchos patrones de diseño lo admiten
+
+Amazon S3 está diseñado para sostener errores de dispositivos simultáneos detectando con rapidez y reparando cualquier redundancia perdida. Amazon S3 también verifica con regularidad la integridad de sus datos mediante sumas de verificación.
