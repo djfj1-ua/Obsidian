@@ -197,3 +197,5 @@ Para obtener tolerancia a errores y estabilidad, las regiones están aisladas un
 + Para algunos servicios, puede elegir la zona de disponibilidad
 + Para lograr resistencia, AWS recomienda la replicación entre zonas de disponibilidad
 
+Es responsabilidad nuestra seleccionar las zonas de disponibilidad donde se encontrarán los sistemas. Los sistemas pueden abarcar varias zonas de disponibilidad. Debe diseñar
+los sistemas para que sobrevivan a un error temporal o prolongado de una zona de disponibilidad si ocurre un desastre. La distribución de las aplicaciones en varias zonas de disponibilidad les permite mantenerse resistentes en la mayoría de las situaciones de error, incluidos los desastres naturales o errores de sistema.
