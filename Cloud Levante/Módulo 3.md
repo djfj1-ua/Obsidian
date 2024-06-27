@@ -41,6 +41,11 @@ Cuándo los casos prácticos deben compartir datos de Amazon S3:
 + Siga el principio de mínimo privilegio
 
 Herramientas y opciones para controlar el acceso a los datos de Amazon S3:
-+ **Función de bloqueo de acceso público**: está habilitada en buckets nuevos de forma predeterminada y es fácil de administrar.
-+ 
++ **Función de bloqueo de acceso público**: Está habilitada en buckets nuevos de forma predeterminada y es fácil de administrar.
++ **Políticas de IAM**: Una buena opción cuando el usuario puede autenticarse mediante IAM,.
++ **Políticas de bucket**: Puede definir el acceso a un objeto o bucket específico.
++ **Listas de control de acceso**(ACL): Un mecanismo de control de acceso heredado.
++ **Puntos de acceso S3**: Puede configurar el acceso con nombres y permisos específicos para cada aplicación.
++ **URL prefirmadas**: Puede conceder acceso limitado a objetos con URL temporales.
++ Comprobación de permisos de bucket de **AWS Trusted Advisor**: una función gratuita.
 
