@@ -11,3 +11,7 @@ Un servicio de almacenamiento de objetos:
 
 Cada objeto tiene *cinco características* consistentes:
 + Tiene una clave que es el nombre que le asigna a un objeto. La clave del objeto se usa para recuperar el objeto. En la Consola de administración de AWS, puede crear un directorio dentro de un *bucket* y cargar un objeto en ese directorio. Sin embargo, la realidad, Amazon S3 no conoce los directorios, por lo que el valor de clave incluye la ruta completa a la raíz del *bucket*.
++ Los objetos también incluyen un ID de versión. En un *bucket*, una clave y un ID de versión identifican un objeto de forma única.
++ El *valor* del objeto es el contenido real que almacena. Puede ser una secuencia de *bytes*. Los valores del objeto son inmutables, es decir que después de que carga un objeto, no puede modificar el valor. Si desea modificar el objeto, debe hacer un cambio fuera de Amazon S3 y volver a cargar el objeto.
++ Los objetos también incluyen metadatos, que es un conjunto de pares de nombre-valor que puede usar para almacenar información sobre el objeto. Puede asignar metadatos, los que se denominan *metadatos definidos por el usuario*, a sus objetos en Amazon S3. Amazon S3 también asigna metadatos del sistema a estos objetos, que utiliza para administrar objetos.
++ Amazon S3 también usa sobrecursos para almacenar información adicional específica del objeto.
