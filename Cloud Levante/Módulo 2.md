@@ -199,3 +199,19 @@ Para obtener tolerancia a errores y estabilidad, las regiones están aisladas un
 
 Es responsabilidad nuestra seleccionar las zonas de disponibilidad donde se encontrarán los sistemas. Los sistemas pueden abarcar varias zonas de disponibilidad. Debe diseñar
 los sistemas para que sobrevivan a un error temporal o prolongado de una zona de disponibilidad si ocurre un desastre. La distribución de las aplicaciones en varias zonas de disponibilidad les permite mantenerse resistentes en la mayoría de las situaciones de error, incluidos los desastres naturales o errores de sistema.
+
+### Zonas locales de AWS
+
++ Le permiten ejecutar partes de las aplicaciones sensibles a la latencia más cerca de los usuarios finales y los recursos en una ubicación geográfica específica
++ Son una extensión de una región de AWS en la que puede usar servicios de AWS en proximidad geográfica de los usuarios finales.
++ Le permiten ubicar servicios de cómputo, almacenamiento, base de datos y otros servicios seleccionados de AWS más cerca de la población, industrias y los centros de TI donde no hay una región en la actualidad.
++ Las administra y reciben soporte de AWS.
+
+### Centros de datos de AWS
+
++ En los centros de datos se almacenan y se procesan los datos.
++ Un centro de datos suele alojar decenas de miles de servidores.
++ Todos los centros de datos se encuentran en línea y a disposición de los clientes.
++ Equipos de red personalizados de AWS:
+	+ Provenientes de varios ODM
+	+ Tienen una pila de protocolo de red personalizada
