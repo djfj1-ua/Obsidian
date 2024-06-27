@@ -55,4 +55,16 @@ Configure la configuración de seguridad apropiada para su caso práctico en el 
 
 + **Configuración de seguridad predeterminada de Amazon S3:** De forma predeterminada, los buckets de Amazon S3 y los objetos almacenados en ellos son privados (están protegidos). Las únicas entidades con acceso a un bucket recién creado sin modificar son el administrador de la cuenta y el usuario raíz de la cuenta de AWS. El propietario del recurso puede otorgar permisos de acceso específicos a otros, pero a quienes no se les haya concedido esos permisos no tendrán acceso.
 + **Desactivado la configuración de seguridad S3:** La mayoría de los casos prácticos , no se requiere acceso público. Con más frecuencia, Amazon S3 se usa para almacenar datos utilizados por una aplicación que se ejecuta fuera de Amazon S3, o para respaldar información confidencial. Para estos casos prácticos comunes, nunca se debe otorgar acceso público a los buckets que contienen los datos.
-+ **Configuración de Amazon S3 para proporcionar acceso controlado:** Al usuario A se le otorgó acceso a los objetos en el bucket, pero al Usuario B se le denegó el acceso. Las situaciones de acceso controlado son frecuentes. Las puede configurar el propietario del bucket mediante una o más de las herramientas o las opciones para controlar el acceso 
++ **Configuración de Amazon S3 para proporcionar acceso controlado:** Al usuario A se le otorgó acceso a los objetos en el bucket, pero al Usuario B se le denegó el acceso. Las situaciones de acceso controlado son frecuentes. Las puede configurar el propietario del bucket mediante una o más de las herramientas o las opciones para controlar el acceso a los datos de Amazon S3 que se analizaron anteriormente en este módulo.
+
+#### Cifrado de los objetos en Amazon S3
+
++ El cifrado codifica los datos con una clave secreta, que los hace ilegibles.
+	+ Solo los usuarios que tienen la clave secreta pueden descodificar los datos
+	+ Opcionalmente, utilice AWS Key Management Service (AWS KMS) para administrar sus claves de cifrado.
++ Cifrado del lado del servidor
+	+ En el bucket, habilite esta función seleccionando la opción Cifrado predeterminado
+	+ Amazon S3 cifra los objetos antes de guardar los objetos en el disco y descifra los objetos cuando usted los descarga
++ Cifrado del cliente
+	+ Cifre los datos en el lado del cliente y cargue los datos cifrados en Amazon S3
+	+ En este caso, usted administra el proceso de cifrado
