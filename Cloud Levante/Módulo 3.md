@@ -73,4 +73,8 @@ Configure la configuración de seguridad apropiada para su caso práctico en el 
 
 ##### S3 Standard
 
-Ofrece almacenamiento de objetos de de durabilidad, disponibilidad y rendimiento elevados para los datos de acceso frecuente. Debido a que ofrece baja latencia y alto rendimiento, S3 Standard es adecuado para una amplia variedad de casos prácticos, como las aplicaciones en la nube, los sitios web dinámicos, la distribución de contenido, las aplicaciones para dispositi
+Ofrece almacenamiento de objetos de de durabilidad, disponibilidad y rendimiento elevados para los datos de acceso frecuente. Debido a que ofrece baja latencia y alto rendimiento, S3 Standard es adecuado para una amplia variedad de casos prácticos, como las aplicaciones en la nube, los sitios web dinámicos, la distribución de contenido, las aplicaciones para dispositivos móviles y videojuegos, y el análisis de big data. Ofrece durabilidad entre un mínimo de tres zonas de disponibilidad.
+
+##### S3 Standard - Acceso poco frecuente (S3 Standard - IA)
+
+Ofrece todos los beneficios de Amazon S3 Standard, pero se ejecuta con un modelo de costos diferentes para almacenar datos de acceso poco frecuente, como imágenes digitales más antiguas o archivos de registro más antiguos. Se aplica una tarifa de almacenamiento mínima de 30 días a todos los datos que se coloquen en él, y también tiene un costo más alto al recuperar los datos desde el almacenamiento de S3 Standard-IA que desde S3 Standard.
