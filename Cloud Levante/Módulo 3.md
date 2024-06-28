@@ -120,3 +120,17 @@ Sin cargos por:
 + Transferencias entre buckets de S3 o de Amazon S3 a cualquier servicio en la misma región de AWS.
 + Transferencia de datos salientes a Amazon CloudFront.
 + Solicitudes DELETE y CANCEL.
+
+##### Carga multiparte
+
+La API de carga multiparte permite cargar objetos grandes de manera uniforme en partes manejables. Los beneficios que ofrece son los siguientes:
++ **Rendimiento mejorado:*** puede cargar las partes al mismo tiempo para aumentar el rendimiento.
++ **Recuperación rápida ante cualquier problema de red:** una parte de tamaño más pequeño reduce el impacto de tener que reiniciar una carga fallida debido a un error de red.
++ **Capacidad de pausar y reanudar cargas de objetos**: puede cargar las partes del objeto a lo largo del tiempo. Después de haber iniciado una carga multiparte, no habrá vencimiento. Debe completar o detener la carga multiparte de forma explícita
++ **Capacidad de iniciar una carga antes de conocer el tamaño final del objeto:** puede cargar un objeto a medida que lo crea.
++ **Capacidad de cargar grandes objetos:** con la API de carga multiparte, puede cargar grandes objetos de hasta 5 TB.
+Los archivos deben tener un tamaño mínimo de 5 MB para usar la función de carga multiparte.
+
+##### Amazon S3 Transfer Acceleration
+
+Permite una transferencia de datos rápida y sencilla a un bucket de S3 que aprovecha Amazon CloudFront y las ubicaciones perimetrales de AWS distribuidas a nivel global. Luego, estos datos se enrutan a Amazon S3
