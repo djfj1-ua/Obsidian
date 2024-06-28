@@ -91,4 +91,16 @@ hay tarifas por recuperación si se usa S3 Intelligent - Tiering, ni tampoco se 
 ##### Amazon S3 Glacier
 
 Es una clase de almacenamiento segura, duradera y de bajo costo para el archivado de datos. Puede almacenar la cantidad de datos que desee de manera confiable y a precios competitivos o más económicos que las soluciones en las instalaciones. Para mantener los costos bajos, pero adecuados para diferentes necesidades, dispone de tres opciones para recuperar los datos, con diversos plazos de acceso y costos:
-+ Las recuperaciones aceleradas suelen estar disponibles en un plazo de 1 a 5 minuto
++ Las recuperaciones aceleradas suelen estar disponibles en un plazo de 1 a 5 minutos.
++ Las recuperaciones estándar suelen completarse en un plazo de 3 a 5 horas.
++ Las recuperaciones masivas suelen completarse en un plazo de 5 a 12 horas.
+
+**Amazon S3 Glacier Deep Archive** es la clase de almacenamiento de menor costo para Amazon S3. Admite la retención a largo plazo y la preservación digital de datos a los que se podría acceder una o dos veces al año. Los datos se almacenan en un mínimo de tres zonas de disponibilidad geográficamente dispersas, con una protección de 11 nueves de durabilidad y se pueden recuperar en un plazo de 12 horas.
+
+##### Políticas de ciclo de vida de Amazon S3
+
+**Configure una política de ciclo de vida de Amazon S3 para eliminar o mover objetos en función de su antiguedad.***
+
+Puede configurar el ciclo de vida de sus objetos para administrar cómo se almacenan durante su ciclo de vida. La **configuración del ciclo de vida** es un conjunto de reglas que definen acciones que Amazon S3 aplica en un grupo de objetos.
+
+Después de establecer
