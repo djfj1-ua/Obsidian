@@ -133,4 +133,14 @@ Los archivos deben tener un tamaño mínimo de 5 MB para usar la función de car
 
 ##### Amazon S3 Transfer Acceleration
 
-Permite una transferencia de datos rápida y sencilla a un bucket de S3 que aprovecha Amazon CloudFront y las ubicaciones perimetrales de AWS distribuidas a nivel global. Luego, estos datos se enrutan a Amazon S3
+Permite una transferencia de datos rápida y sencilla a un bucket de S3 que aprovecha Amazon CloudFront y las ubicaciones perimetrales de AWS distribuidas a nivel global. Luego, estos datos se enrutan a Amazon S3 por medio de una ruta de red optimizada.
+
+Utiliza Transfer Acceleration si se cumple lo siguiente:
++ Tiene clientes en todo el mundo que hacen cargas a un bucket centralizado
++ Transfiere gigabytes o terabytes de datos entre continentes de forma regular
++ No utiliza todo el ancho de banda disponible cuando carga archivos en Amazon S3 desde Internet.
+
+##### AWS Snowball
+
+Es una opción de transporte de datos a escala de petabytes que no requiere que escriba código ni compre hardware para transferir sus datos.
+Simplemente, debe crear un trabajo en la Consola de administración de AWS y le enviaremos un dispositivo Snowball. Conecte el dispositivo a su red local y transfiera los archivos directamente a él. Luego, envíelo de vuelta y haga un seguimiento del estado de su envío. Cuando llegue a la instalación segura de Amazon, los datos se transferirán a su cuenta de AWS.
