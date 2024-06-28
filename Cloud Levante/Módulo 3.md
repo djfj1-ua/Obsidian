@@ -103,4 +103,20 @@ Es una clase de almacenamiento segura, duradera y de bajo costo para el archivad
 
 Puede configurar el ciclo de vida de sus objetos para administrar cómo se almacenan durante su ciclo de vida. La **configuración del ciclo de vida** es un conjunto de reglas que definen acciones que Amazon S3 aplica en un grupo de objetos.
 
-Después de establecer
+Después de establecer una política de ciclo de vida de S3, los datos se transferirán automáticamente a una clase de almacenamiento distinta sin generar ningún cambio en la aplicación.
+
+Mediante el uso de políticas de ciclo de vida, puede hacer que los datos realicen ciclos a intervalos regulares entre los distintos tipos de almacenamiento de Amazon S3.
+Realizar estos ciclos reduce los costos generales porque paga menos por los datos que se vuelven menos importantes con el tiempo. Además de poder establecer reglas del ciclo de vida por objeto , también puede establecer reglas del ciclo de vida por bucket.
+
+##### Costos de Amazon S3
+
+Solo paga por lo que utiliza. Esto incluye lo siguiente:
++ GB de objetos almacenados(al mes). Diferentes precios por región y por clase de almacenamiento.
++ Transferencias salientes a otras regiones o a Internet.
++ PUT, COPY, POST, LIST, GET, SELECT, transición de ciclo de vida, solicitudes de recuperación de datos.
+
+Sin cargos por:
++ Transferencias de datos entrantes de Internet a Amazon S3.
++ Transferencias entre buckets de S3 o de Amazon S3 a cualquier servicio en la misma región de AWS.
++ Transferencia de datos salientes a Amazon CloudFront.
++ Solicitudes DELETE y CANCEL.
