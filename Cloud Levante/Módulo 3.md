@@ -85,4 +85,10 @@ Almacena datos en una única zona de disponibilidad. Es ideal para los clientes 
 
 ##### S3 Intelligent - Tiering
 
-Se diseñó para optimizar los costos mediante la migración
+Se diseñó para optimizar los costos mediante la migración automática de los datos al nivel de acceso más rentable sin afectar el rendimiento ni generar una sobrecarga operativa. Por una pequeña tarifa de supervisión y automatización por objeto, Amazon S3 supervisa los patrones de acceso de los objetos en S3 Intelligent - Tiering. Traslada los objetos a los que no se ha accedido durante 30 días consecutivos al nivel de acceso de poco frecuente. Si se accede a un objeto en el nivel de acceso poco frecuente, este se traslada automáticamente al nivel de acceso frecuente. No
+hay tarifas por recuperación si se usa S3 Intelligent - Tiering, ni tampoco se cobran tarifas adicionales por organización en niveles cuando los objetos se trasladan de un nivel a otro.
+
+##### Amazon S3 Glacier
+
+Es una clase de almacenamiento segura, duradera y de bajo costo para el archivado de datos. Puede almacenar la cantidad de datos que desee de manera confiable y a precios competitivos o más económicos que las soluciones en las instalaciones. Para mantener los costos bajos, pero adecuados para diferentes necesidades, dispone de tres opciones para recuperar los datos, con diversos plazos de acceso y costos:
++ Las recuperaciones aceleradas suelen estar disponibles en un plazo de 1 a 5 minuto
