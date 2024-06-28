@@ -45,3 +45,11 @@ En primer lugar, confirma que actualmente los objetos sean privados.
 Puedes hacer públicos los objetos de Amazon S3 de dos maneras diferentes:
 + Para hacer público un bucket completo o un directorio específico dentro del bucket, utiliza una *política de bucket*.
 + Puedes utilizar una *lista de control de acceso(ACL)* para hacer públicos objetos individuales en un bucket.
+
+En general, es más seguro hacer públicos *objetos individuales* porque esto evita que otro objetos se hagan públicos por accidente. Sin embargo, si sabes que la totalidad del bucket no contiene información confidencial, puedes utilizar una *política de bucket*.
+
+Para configurar los objetos individuales para que que sean accesibles públicamente:
++ Selecciona los objetos que quieras publicar.
++ En el menú *Actions*, elige *Hacer público a través de ACL*.
++ Selecciona *Hacer público*
+
