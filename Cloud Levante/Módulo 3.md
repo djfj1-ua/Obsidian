@@ -78,3 +78,11 @@ Ofrece almacenamiento de objetos de de durabilidad, disponibilidad y rendimiento
 ##### S3 Standard - Acceso poco frecuente (S3 Standard - IA)
 
 Ofrece todos los beneficios de Amazon S3 Standard, pero se ejecuta con un modelo de costos diferentes para almacenar datos de acceso poco frecuente, como imágenes digitales más antiguas o archivos de registro más antiguos. Se aplica una tarifa de almacenamiento mínima de 30 días a todos los datos que se coloquen en él, y también tiene un costo más alto al recuperar los datos desde el almacenamiento de S3 Standard-IA que desde S3 Standard.
+
+##### S3 One Zone - Acceso poco frecuente
+
+Almacena datos en una única zona de disponibilidad. Es ideal para los clientes que desean una opción de menor costo y que no necesitan la disponibilidad y la resiliencia de S3 Standard o S3 Standard - IA. Es una buena opción para almacenar copias de seguridad secundarias de datos en las instalaciones o datos que se puede volver a crear fácilmente. También puede utilizarlo como almacenamiento rentable para los datos que se replican desde otra región de AWS.
+
+##### S3 Intelligent - Tiering
+
+Se diseñó para optimizar los costos mediante la migración
