@@ -51,5 +51,4 @@ En general, es más seguro hacer públicos *objetos individuales* porque esto ev
 Para configurar los objetos individuales para que que sean accesibles públicamente:
 + Selecciona los objetos que quieras publicar.
 + En el menú *Actions*, elige *Hacer público a través de ACL*.
-+ Selecciona *Hacer público*
-
++ Selecciona *Hacer público*.
