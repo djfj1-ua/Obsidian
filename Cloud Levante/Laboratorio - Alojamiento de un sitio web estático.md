@@ -21,3 +21,27 @@
 	+ **Tipo de alojamiento:** elige *Alojar un sitio web estático*
 	+ **Documento de índice:** *documento index.html*
 	+ **Documento de error:** *documento error.html*
++ Guarda los cambios
++ En el panel *Alojamiento de sitios web estáticos*, selecciona el enlace debajo de *Punto de enlace del sitio web del bucket*.
+
+### Cargar contenido al bucket
+
++ Elige archivos que quieras subir al bucket.
++ Selecciona el bucket donde quieras subir los archivos y dirígete a la pestaña *Objetos*.
++ Selecciona *Cargar*.
++ Elige *Add files*.
++ Selecciona los archivos que quieras subir.
++ Pincha en *Cargar*.
++ Cierra la ventana.
+
+### Habilitar el acceso a los objetos 
+
+De forma predeterminada, los objetos almacenados en Amazon S3 son privados. Esto garantiza que los datos de tu organización permanecen seguros.
+
+En esta tarea, lograrás que los objetos cargados tengan acceso público.
+
+En primer lugar, confirma que actualmente los objetos sean privados.
+
+Puedes hacer públicos los objetos de Amazon S3 de dos maneras diferentes:
++ Para hacer público un bucket completo o un directorio específico dentro del bucket, utiliza una *política de bucket*.
++ Puedes utilizar una *lista de control de acceso(ACL)* para hacer públicos objetos individuales en un bucket.
