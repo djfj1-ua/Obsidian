@@ -52,3 +52,7 @@ Para configurar los objetos individuales para que que sean accesibles públicame
 + Selecciona los objetos que quieras publicar.
 + En el menú *Actions*, elige *Hacer público a través de ACL*.
 + Selecciona *Hacer público*.
+
+
+
+## Fallo al crear una política de bucket para hacer todos los objetos publicos
