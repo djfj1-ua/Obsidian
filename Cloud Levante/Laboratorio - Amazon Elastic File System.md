@@ -34,4 +34,30 @@
 
 ### Conectarse a la instancia de EC2 mediante SSH
 
-+ Details -> Show, en Credentials descarga Download PP
++ Details -> Show, en Credentials descarga Download PPK y anota la dirección EC2PublicIP
++ Cierra Credentials
++ Abre PuTTY
++ Elige Session:
+	+ En la parte de HostName pega el EC2PublicIP
+	+ Ahora selecciona en la consola de EC2 y seleciona Instances
+	+ Selecciona la instancia que deseas conectar
+	+ En la pestaña *Description*, copia el valor de IPv4 Public IP
++ Vuelve a PuTTY y en Connection expande
++ Selecciona Auth y expande, dale a credentials
++ En private key file for authentication selecciona Browse y abre el archivo labsuser.ppk
++ Dale a accept y conectarte al host
++ Inicia sesion con ec2-user
+
+### Crear un directorio nuevo y montar el sistema de archivos de EFS
+
++ En SSH crea un nuevo directorio *sudo mkdir efs*.
++ En la consola de administración de AWS, en el menú selecciona EFS.
++ Selecciona el nombre de My First EFS File System
++ En la consola de Amazon EFS, en la esquina superior derecha de la página, selecciona Attach(Adjuntar) para abrir las instrucciones de montaje de Amazon EC2.
++ Copia el comando completo en la sección *Using the NFS client*, el comando debe ser como este: 
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-bce57914.efs.us-west-2.amazonaws.com:/ efs
+
++ En tu sesión SSH de Linux, monta tu sistema de archivos Amazon EFS de la siguiente forma:
+	+ Pegando el comando
+	+ Presionando INTRO
++ Obtén un resumen completo del uso de espacio en disco disponibley
