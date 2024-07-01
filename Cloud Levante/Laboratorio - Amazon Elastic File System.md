@@ -60,4 +60,9 @@ sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,ret
 + En tu sesión SSH de Linux, monta tu sistema de archivos Amazon EFS de la siguiente forma:
 	+ Pegando el comando
 	+ Presionando INTRO
-+ Obtén un resumen completo del uso de espacio en disco disponibley
++ Obtén un resumen completo del uso de espacio en disco disponible y utilizando ingresando:
+	+ *sudo df -hT*
+
+### Examinar el comportamiento de rendimiento del nuevo sistema de archivos de EFS
++ Para examinar las características de rendimiento de escritura del sistema de archivos, escribe lo siguiente:
+sudo fio --name=fio-efs --filesize=10G --filename=./efs/fio-efs-test.img --bs=1M --nrfiles=1 --direct=1 --sync=0 --rw=write --iodepth=200 --ioengine=libaio
