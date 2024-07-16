@@ -1,4 +1,5 @@
 # Tipos de Google Dorks
+Página para ver google dorks: https://www.exploit-db.com/google-hacking-database
 
 Google Dorks son búsquedas avanzadas que permiten a los usuarios encontrar información específica en internet utilizando operadores de búsqueda de Google. Estos operadores pueden ser combinados para crear consultas complejas. A continuación se presenta un resumen de los principales tipos de Google Dorks:
 
