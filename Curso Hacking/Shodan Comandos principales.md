@@ -1,4 +1,4 @@
-**Repositorio**: 
+**Repositorio**: https://github.com/jakejarvis/awesome-shodan-queries
 **Comandos relevantes para Shodan**
 
 A continuación se presentan algunos de los filtros más relevantes para el uso de Shodan:
