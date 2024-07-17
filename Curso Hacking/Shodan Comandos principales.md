@@ -50,3 +50,5 @@ A continuación se presentan algunos de los filtros más relevantes para el uso 
 - `version`: Version for the product string
     
 - `vuln`: CVE ID for a vulnerability string
+
+También se puede utilizar censys. Es otra herramienta parecida pero indexa la información de diferente manera.
