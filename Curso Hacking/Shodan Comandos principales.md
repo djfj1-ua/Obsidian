@@ -52,3 +52,5 @@ A continuación se presentan algunos de los filtros más relevantes para el uso 
 - `vuln`: CVE ID for a vulnerability string
 
 También se puede utilizar censys. Es otra herramienta parecida pero indexa la información de diferente manera.
+
+Se puede ver snapshots de páginas web antiguas con https:/web.archive.org
