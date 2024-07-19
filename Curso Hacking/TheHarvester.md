@@ -58,3 +58,4 @@ Para cambiar de entorno, hay que ir a la carpeta ~/old_harvester/theHarvester-3.
     `qwant`, `rapiddns`, `securityTrails`, `spyse`, `sublist3r`, `threatcrowd`, `threatminer`,
     `trello`, `twitter`, `urlscan`, `virustotal`, `yahoo`.
 
+Si aparece el 'error' *substring not found* es que la página a la que estoy referenciando ha bloqueado mi ip por hacer demasiadas peticiones.
