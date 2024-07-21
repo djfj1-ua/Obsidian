@@ -88,3 +88,14 @@ Guarda los resultados en formato XML.
 nmap -v <objetivo>
 Proporciona salida detallada del escaneo.
 ```
+
+### Ejemplo
+
+Vamos a probar como funciona el *nmap*, en este caso y para empezar, utilizaremos el comando
+```sh
+nmap -sn 192.168.32.169
+```
+Esta ip, es la ip de la máquina windows metasploit3. El resultado del comando es el siguiente: ![[Pasted image 20240721180124.png]]
+Donde podemos ver como se ejecuta el programa.
+Desde **Wireshark** podemos ver que se han intercambiado ciertos paquetes entre la máquina host (kali linux) a la máquina guest (windows).
+![[Pasted image 20240721180554.png]]
