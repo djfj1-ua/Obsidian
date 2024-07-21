@@ -100,3 +100,9 @@ Donde podemos ver como se ejecuta el programa.
 Desde **Wireshark** podemos ver que se han intercambiado ciertos paquetes entre la máquina host (kali linux) a la máquina guest (windows).
 ![[Pasted image 20240721180845.png]]
 Son envios de paquetes TCP SYN al puerto 80 y al puerto 443, para comprobar si estan activos. En este caso, podemos ver en el tercer paquete, que no hay nada corriendo en el puerto 443 y, en el quinto paquete, se ve que si hay algo funcionando en el puerto 80.
+
+Este ejemplo se puede realizar de otra manera menos intrusiva, que es realizando el comando con privilegios de administrador.
+```sh
+sudo nmap -sn 192.168.32.169
+```
+Lo que hace es 
