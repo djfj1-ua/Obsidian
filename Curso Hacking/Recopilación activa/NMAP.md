@@ -98,4 +98,5 @@ nmap -sn 192.168.32.169
 Esta ip, es la ip de la máquina windows metasploit3. El resultado del comando es el siguiente: ![[Pasted image 20240721180124.png]]
 Donde podemos ver como se ejecuta el programa.
 Desde **Wireshark** podemos ver que se han intercambiado ciertos paquetes entre la máquina host (kali linux) a la máquina guest (windows).
-![[Pasted image 20240721180554.png]]
+![[Pasted image 20240721180845.png]]
+Son envios de paquetes TCP SYN al puerto 80 y al puerto 443, para comprobar si estan activos. En este caso, podemos ver en el tercer paquete, que no hay nada corriendo en el puerto 443 y, en el quinto paquete, se ve que si hay algo funcionando en el puerto 80.
