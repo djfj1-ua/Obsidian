@@ -24,3 +24,5 @@ La recopilación semi-pasiva de información es una técnica de obtención de da
 - **Regulaciones**: Cumplir con las leyes y normativas de protección de datos.
 
 La recopilación semi-pasiva de información es una estrategia efectiva para obtener datos de manera eficiente y precisa, con un equilibrio entre la interferencia mínima y la calidad de los datos recopilados.
+
+[[FOCA]] [[DNS (Domain Name System)]]
