@@ -1,0 +1,1 @@
+[[Recopilación activa de información]][[Recolección semi-pasiva de información]][[Recopilación pasiva de información]]
