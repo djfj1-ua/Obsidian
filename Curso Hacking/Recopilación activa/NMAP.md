@@ -43,7 +43,11 @@ nmap -PS <objetivo>
 Identifica los puertos abiertos que tiene una determinada máquina objetivo.
 
 nmap -PS21 <objetivo> -p 21
-Comprueba la conexión con la máquina objetivo con el puerto 21()
+Comprueba la conexión con la máquina objetivo con el puerto 21(-PS21) y después comprueba si el puerto 21 esta abierto (-p 21).
+
+Puedo especificar más puertos tanto en el -PS (para que compruebe la conexión con esos puertos) o especificar más puertos en el -p (para saber si están abiertos).
+
+Esto también se puede hacer para una red entera, especificando la dirección de red con la máscara (Ej: 192.168.32.0/24).
 ```
 
 ### Detección de Servicios y Versiones
