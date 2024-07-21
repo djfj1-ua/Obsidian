@@ -48,4 +48,5 @@ Este vez obtenemos más hosts disponibles que en el ejemplo anterior: ![[Pasted 
 Funciona de la misma manera que usando permisos de administrador, enviando paquetes *ARP* a la dirección de *Broadcast* preguntando por la *MAC* de todas las posibles *IP*s, solo que ahora, la forma en la que nmap determina si un host existe o no es si recibe un paquete ARP Reply en alguna de esas las peticiones.
 ![[Pasted image 20240721190104.png]]
 Podemos ver en el **Wireshark** que la *IP* 192.168.32.254 responde enviando su dirección *MAC* (00:50:56:e4:f0:b7), por lo que *nmap* determina que es una máquina existente y lo devuelve por terminal. Se puede comprobar que es la última salida del comando.
+
 En realidad, la diferencia de *hosts* detectados de un ejemplo a otro son 2, estos dos *hosts* que detecta extra el ejemplo de privilegios de administrador son uno de la dirección de red y otra de la dirección de *Broadcast*.

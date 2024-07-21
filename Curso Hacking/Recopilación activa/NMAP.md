@@ -38,6 +38,12 @@ Realiza un ping scan para descubrir hosts activos en una red.
 ```sh
 nmap -p <puertos> <objetivo>
 Especifica puertos a escanear (e.g., `nmap -p 80,443 <objetivo>`).
+
+nmap -PS <objetivo>
+Identifica los puertos abiertos que tiene una determinada máquina objetivo.
+
+nmap -PS21 <objetivo> -p 21
+Comprueba la conexión con la máquina objetivo con el puerto 21()
 ```
 
 ### Detección de Servicios y Versiones
