@@ -1,6 +1,5 @@
 ## Definición
 Nmap (Network Mapper) es una herramienta de código abierto utilizada para la exploración de redes y auditorías de seguridad. Permite descubrir hosts y servicios en una red informática mediante el envío de paquetes y el análisis de sus respuestas.
-
 ## Para Qué Sirve
 Nmap se utiliza principalmente para:
 - **Descubrimiento de Red**: Identificar dispositivos activos en una red.
@@ -88,3 +87,5 @@ Guarda los resultados en formato XML.
 nmap -v <objetivo>
 Proporciona salida detallada del escaneo.
 ```
+
+[[Ejemplos NMAP]]

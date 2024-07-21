@@ -33,4 +33,16 @@ Ejecutamos el comando:
 ```sh
 nmap -sn 192.168.32.0/24
 ```
-Es la dirección de red la red local que estamos ut
+Es la dirección de red la red local que estamos utilizando. Como resultado obtenemos lo siguiente: 
+![[Pasted image 20240721184839.png]]
+Si vemos el **Wireshark** podemos comprobar como funciona este comando utilizando la dirección de la red en lugar de una *IP*.![[Pasted image 20240721185110.png]]
+Consiste simplemente en enviar paquetes *ARP* a la dirección de *Broadcast* preguntando por la *MAC* de todas las posibles *IP*s, en el caso de que exista un paquete *ARP Reply*, intenta conectarse a los puerto 443 y 80. Si esta consexión se realiza con éxito a alguno de esos puertos, nmap determina que esa máquina existe.
+
+#### Con privilegios de administrador
+
+Ejecutamos el comando:
+```sh
+sudo nmap -sn 192.168.32.0/24
+```
+Este vez obtenemos más hosts disponibles que en el ejemplo anterior: ![[Pasted image 20240721185641.png]]
+Esto se debe a que ahora, la forma en la que *nmap* determina si un *host* existe o no es si recibe una respue

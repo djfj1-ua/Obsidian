@@ -28,4 +28,4 @@ La recopilación activa de información es el proceso de obtener datos a través
 - **Autorización**: A menudo se requiere obtener permiso antes de realizar actividades de recopilación activa.
 
 En resumen, la recopilación activa de información es una técnica eficaz para obtener datos detallados y específicos a través de la interacción directa con el objetivo, siendo esencial en diversas áreas como la seguridad informática y la investigación de mercado, aunque requiere un manejo cuidadoso de las implicaciones éticas y legales.
-[[dnsrecon]]
+[[dnsrecon]] [[NMAP]]
