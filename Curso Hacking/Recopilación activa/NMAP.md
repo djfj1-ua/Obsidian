@@ -110,3 +110,20 @@ Proporciona una razón de porque los puertos se encuentran en ese estado.
 ```
 
 [[Ejemplos NMAP]]
+
+### Estado de los puertos
+
+#### Open
+Una aplicación está aceptando activamente conexiones TCP, datagramas UDP o asociaciones SCTP en este puerto. Encontrar estos puertos es a menudo el objetivo principal del escaneo de puertos. Las personas preocupadas por la seguridad saben que cada puerto abierto es una vía para un ataque. Los atacantes y los testers de penetración quieren explotar los puertos abiertos, mientras que los administradores intentan cerrarlos o protegerlos con firewalls sin obstaculizar a los usuarios legítimos. Los puertos abiertos también son interesantes para los escaneos no relacionados con la seguridad porque muestran servicios disponibles en la red.
+
+#### Closed
+Nmap no puede determinar si el puerto está abierto porque el filtrado de paquetes impide que sus sondeos lleguen al puerto. El filtrado podría ser de un dispositivo de firewall dedicado, reglas de enrutador o software de firewall basado en el host. Estos puertos frustran a los atacantes porque proporcionan muy poca información. A veces responden con mensajes de error ICMP, como el tipo 3 código 13 (destino inalcanzable: comunicación administrativamente prohibida), pero los filtros que simplemente descartan los sondeos sin responder son mucho más comunes. Esto obliga a Nmap a reintentar varias veces por si acaso la sonda se descartó debido a la congestión de la red en lugar del filtrado. Esto ralentiza el escaneo dramáticamente.
+
+#### Unfiltered
+El estado sin filtrar (unfiltered) significa que un puerto es accesible, pero Nmap no puede determinar si está abierto o cerrado. Solo el escaneo ACK, que se utiliza para mapear conjuntos de reglas de firewall, clasifica los puertos en este estado. Escanear puertos sin filtrar con otros tipos de escaneo, como el escaneo Window, SYN o FIN, puede ayudar a resolver si el puerto está abierto.
+
+#### Open/filtered
+Nmap coloca los puertos en este estado cuando no puede determinar si un puerto está abierto o filtrado. Esto ocurre con tipos de escaneo en los que los puertos abiertos no dan respuesta. La falta de respuesta también podría significar que un filtro de paquetes descartó la sonda o cualquier respuesta que provocó. Por lo tanto, Nmap no sabe con certeza si el puerto está abierto o está siendo filtrado. Los escaneos UDP, de protocolo IP, FIN, NULL y Xmas clasifican los puertos de esta manera.
+
+#### Closed/filtered
+Este estado se usa cuando Nmap no puede determinar si un puerto está cerrado o filtrado. Solo se usa para el escaneo IP ID idle.
