@@ -55,3 +55,4 @@ En realidad, la diferencia de *hosts* detectados de un ejemplo a otro son 2, est
 ```sh
 sudo nmap -v --reason -sS -oX puertos.xml --stylesheet="https://svn.nmap.org/nmap/docs/nmap.xsl" 192.168.32.125-135 
 ```
+Realiza un escaneo de puertos a las máquinas que esten en el rango .125 - .135, haciendo que aparezca más información con -v (verbose), que aparezca con la razón del escaneo (--reason)
