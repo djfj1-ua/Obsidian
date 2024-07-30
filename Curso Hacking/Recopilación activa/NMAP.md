@@ -64,11 +64,13 @@ Intenta detectar el sistema operativo del host.
 
 ### Escaneo Silencioso (Stealth Scan)
 ```sh
-nmap -sS <objetivo>
+sudo nmap -sS <objetivo>
 Realiza un escaneo TCP SYN stealth, comúnmente utilizado para evadir detección.
-Deja a medias la comprobación del puerto ya que envia un RST para no hacer tanta interacción con la máquina atacante.
+Deja a medias la comprobación del puerto ya que envia un RST para no hacer tanta interacción con la máquina atacante. Sin 3-Way HandShake completo.
 Se puede hacer el escaneo con un rango de máquinas de esta forma:
 nmap -sS 192.168.32.125-135 -> Esto realizara el escaneo de las máquinas en ese rango determinado.
+nmap -sT <objetivo>
+Igual que -sS pero si realiza el 3-Way HandShake completo.
 ```
 
 ### Uso de Nmap Scripting Engine (NSE)
