@@ -50,3 +50,8 @@ Funciona de la misma manera que usando permisos de administrador, enviando paque
 Podemos ver en el **Wireshark** que la *IP* 192.168.32.254 responde enviando su dirección *MAC* (00:50:56:e4:f0:b7), por lo que *nmap* determina que es una máquina existente y lo devuelve por terminal. Se puede comprobar que es la última salida del comando.
 
 En realidad, la diferencia de *hosts* detectados de un ejemplo a otro son 2, estos dos *hosts* que detecta extra el ejemplo de privilegios de administrador son uno de la dirección de red y otra de la dirección de *Broadcast*.
+
+### Ejemplo de salida de fichero con escaneo de puertos -sS
+```sh
+sudo nmap -v --reason -sS -oX puertos.xml --stylesheet="https://svn.nmap.org/nmap/docs/nmap.xsl" 192.168.32.125-135 
+```

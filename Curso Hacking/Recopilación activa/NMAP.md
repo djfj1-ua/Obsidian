@@ -101,4 +101,10 @@ nmap -v <objetivo>
 Proporciona salida detallada del escaneo.
 ```
 
+### Escaneo con explicación
+```sh
+nmap --reason <objetivo>
+Proporciona una razón de porque los puertos se encuentran en ese estado.
+```
+
 [[Ejemplos NMAP]]
