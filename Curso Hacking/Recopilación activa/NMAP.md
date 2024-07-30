@@ -66,6 +66,9 @@ Intenta detectar el sistema operativo del host.
 ```sh
 nmap -sS <objetivo>
 Realiza un escaneo TCP SYN stealth, comúnmente utilizado para evadir detección.
+Deja a medias la comprobación del puerto ya que envia un RST para no hacer tanta interacción con la máquina atacante.
+Se puede hacer el escaneo con un rango de máquinas de esta forma:
+nmap -sS 192.168.32.125-135 -> Esto realizara el escaneo de las máquinas en ese rango determinado.
 ```
 
 ### Uso de Nmap Scripting Engine (NSE)
