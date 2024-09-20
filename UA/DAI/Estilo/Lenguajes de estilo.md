@@ -1,7 +1,5 @@
 ## Selectores y propiedades del lenguaje CSS
 
-### Resumen sobre selectores y propiedades de CSS
-
 CSS (Cascading Style Sheets) es un lenguaje utilizado para describir la presentación de un documento HTML. Sus principales componentes son los **selectores** y las **propiedades**.
 
 #### Selectores en CSS
@@ -176,4 +174,44 @@ De paso, hemos hecho que las medidas de todas las cajas se determinen usando el 
 
 Las opciones anteriores son bastante limitadas y es habitual que necesitemos más libertad a la hora de distribuir el contenido de los elementos en una página web. Una de las formas básicas de conseguirlo es a través del atributo `position`, que puede tener los valores `static`, `relative`, `absolute`, `fixed` y `sticky`.
 
-#### Posicio
+#### Posicionamiento estático
+
+El posicionamiento `static` corresponde al comportamiento por defecto que ya hemos visto: por ejemplo, cada elemento de tipo bloque se muestra en la línea siguiente al elemento anterior. Si un elemento no tiene asociado ningún valor en su propiedad `position` esta tomará el valor `static`.
+![[Pasted image 20240920102936.png]]
+![[Pasted image 20240920102950.png]]
+
+#### Posicionamiento relativo
+
+El posicionamiento `relative` nos permite cambiar la posición por defecto de un elemento, moviéndolo de la posición que le habría correspondido por defecto con ayuda de las propiedades `top`, `bottom`, `left` y `right`. Por poner un ejemplo, extensible a las otras tres propiedades, el valor de `left` es aquí la distancia del borde izquierdo de la ubicación donde se habría colocado la caja del elemento por defecto al borde izquierdo de la ubicación en la que finalmente se colocará. Si no se da valor a ninguna de estas cuatro proiedades, el elemento se mostrará exactamente en su lugar por defecto; como veremos más adelante, definir `position` como `relative`, aun sin cambiar ninguna de las propiedades `top`, `bottom`, `left` o `right`, puede ser muy útil para que un elemento se considere como _posicionado_ cuando usemos el posicionamiento de tipo absoluto.
+
+Este posicionamiento es muy utilizado para realizar pequeños ajustes en la posición por defecto en la que se muestra un determinado elemento.
+![[Pasted image 20240920103027.png]]
+
+Observa cómo el espacio por defecto que ocupaba el cuadrado azul no ha sido ocupado por ningún otro elemento. Es como si el motor de visualización del navegador ignorara el posicionamiento relativo en una primera pasada y lo tuviera en cuenta en una segunda pasada tras haber colocado todos los elementos de la página.
+
+![[Pasted image 20240920103125.png]]![[Pasted image 20240920103142.png]]
+
+La propiedad `z-index` solo funciona si el elemento _está posicionado_. Diremos que un elemento _está posicionado_ si el valor de su posición es cualquiera excepto `static`. Por ello es por lo que hemos tenido que añadir un posicionamiento relativo a la caja lavanda (pero no hemos cambiado ninguna propiedad como `top`, `bottom`, `left` o `right` para no cambiar su posición).
+
+Finalmente, observa cómo con el uso adecuado del posicionamiento relativo podemos cambiar el orden en el que se muestra la información en el navegador respecto al orden inicialmente definido en el documento HTML:
+![[Pasted image 20240920103216.png]]
+
+
+#### Posicionamiento absoluto
+
+Si el posicionamiento `relative` que acabamos de ver permite colocar un elemento de forma relativa a su posición por defecto, el posicionamiento `absolute` permite colocarlo de forma relativa al elemento padre (más abajo matizaremos esto). En este caso, no _deja hueco_, porque nunca llega a tener una posición original propia. Además, de nuevo podemos usar las propiedades `top`, `bottom`, `left` y `right` para moverlo. Por poner un ejemplo, extensible a las otras tres propiedades, el valor de `left` es la distancia del borde izquierdo de la caja contenedora al borde izquierdo de la caja que resultará para el nuevo elemento. Un elemento con posicionamiento absoluto no influye en otros elementos ni otros elementos influyen en él.
+![[Pasted image 20240920103252.png]]
+
+Observa cómo además de añadir las propiedades `position`, `left` y `right` al elemento azul, hemos añadido `position: relative` al padre (esto es, al elemento contenedor). Esto es así porque las reglas son un poco más complejas que las mencionadas anteriormente: en realidad, el posicionamiento absoluto usa como referencia el primer ancestro que _esté posicionado_, es decir, como ya hemos dicho antes, aquel que tenga un posicionamiento no estático. Si tras ascender por el árbol buscando un ancestro posicionado, el navegador no encontrara ninguno, el elemento con posicionamiento absoluto se posicionaría con respecto al elemento `<body>`.
+
+#### Posicionamiento fijo
+
+Al igual que con el posicionamiento absoluto, en el posicionamiento `fixed` no se aplica el flujo normal para el elemento correspondiente y este no deja ningún hueco. Las diferencias con el posicionamiento absoluto son:
+
+- Los desplazamientos son relativos a la ventana del documento.
+    
+- La caja se mantiene en esa posición de la ventana aunque el usuario se desplace arriba o abajo (_scroll_) por el documento.
+
+![[Pasted image 20240920103355.png]]
+
+Los espacios en blanco alrededor de los operadores son necesarios. Solo cambiando el valor inicial de la variable se consigue que se recalculen los tamaños y posiciones de todos los elementos (¡pruébalo!). Las propiedades personalizadas también se heredan, por lo que suele ser una práctica común (como en el ejemplo) declararlas para la pseudo-clase `:root` de CSS. Esta pseudo-clase selecciona el elemento raíz del árbol DOM. En HTML, este elemento es `<html>`, aunque la especificidad de `:root` es mayor. Las hojas de estilo pueden aplicarse a documentos escritos en otros lenguajes (XML, por ejemplo), por lo que `:root` es un selector más aconsejable e independiente del documento.
