@@ -136,3 +136,12 @@ CSS permite dar estilo a los elementos HTML mediante el uso de **selectores** y 
 Elementos en bloque:
 
 - Su caja comienza en una nueva línea debajo de la caja anterior y, salvo que se restrinja explícitamente, se extiende completamente a derecha e izquierda hasta ocupar todo el ancho disponible para el elemento padre.
+- La caja de cualquier elemento posterior también aparece en una nueva línea.
+- La altura de la caja depende del contenido (si se estrecha la ventana del navegador, la caja se alarga convenientemente para que el contenido quepa en ella), aunque puede fijarse explícitamente con propiedades como `height`.
+- Elementos como `<p>`,`<div>` o `<section>` son ejemplos de elementos de bloque; `<div>` es un elemento de bloque especial de HTML ya que no tiene una semántica asociada: su propósito es delimitar contenido cuya representación tiene algún estilo diferenciado, pero que no tiene un matiz semántico que se pueda representar mediante un elemento HTML.
+
+En el caso de los elementos en línea:
+- Estos elementos no se muestran en una nueva línea ni provocan la aparición de una nueva línea al final de ellos.
+- Las cajas en línea no afectan al espaciado vertical.
+- El ancho de su caja depende de su contenido (propiedades como `width` y `height` son ignoradas), no del ancho del elemento padre.
+- Ejemplos de elementos en línea son `<strong>`, `<span>` o `<a>`; al igual que `<div>`, `<span>` no tiene semántica asociada y su propósito es el mismo que el de `<div>` pero para contenido en línea.
