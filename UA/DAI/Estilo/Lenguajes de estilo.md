@@ -134,3 +134,5 @@ CSS permite dar estilo a los elementos HTML mediante el uso de **selectores** y 
 ### Elementos en línea y en bloque
 
 Elementos en bloque:
+
+- Su caja comienza en una nueva línea debajo de la caja anterior y, salvo que se restrinja explícitamente, se extiende completamente a derecha e izquierda hasta ocupar todo el ancho disponible para el elemento padre.
