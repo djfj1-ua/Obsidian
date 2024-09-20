@@ -145,3 +145,35 @@ En el caso de los elementos en línea:
 - Las cajas en línea no afectan al espaciado vertical.
 - El ancho de su caja depende de su contenido (propiedades como `width` y `height` son ignoradas), no del ancho del elemento padre.
 - Ejemplos de elementos en línea son `<strong>`, `<span>` o `<a>`; al igual que `<div>`, `<span>` no tiene semántica asociada y su propósito es el mismo que el de `<div>` pero para contenido en línea.
+
+### Modelo de caja en CSS
+
+Todos los elementos de HTML se muestran en una caja _imaginaria_ que se extiende alrededor de su contenido. Si bien el posicionamiento o el tamaño de estas cajas sigue reglas por defecto como las que hemos visto, muchas de estas propiedades geométricas pueden modificarse mediante reglas de CSS. Entender el modelo de caja de CSS es fundamental a la hora de dar estilo a una página web. Esto implica, entre otras cosas, entender bien la forma de definir los márgenes, el borde y el relleno (_padding_) de cada caja.
+
+![[Pasted image 20240920102035.png]]
+
+Esta es una lista de los principales parámetros de una caja que podemos modificar mediente propiedades de CSS:
+
+- El ancho y alto de cada caja se pueden definir explícitamente mediante las propiedades `width` y `height`.
+    
+- Cada caja tiene un borde alrededor. El grosor de este borde se define con las propiedades `border-top-width`, `border-right-width`, `border-bottom-width` y `border-bottom-left`; estas propiedades suelen tener valor cero por defecto. El color del borde se define con las propiedades `bottom-top-color`, `bottom-right-color`, etc. El trazo del borde puede, además, mostrarse con una línea continua (`solid`), con una línea discontinua (`dashed`) o con una línea de puntos (`dotted`), entre otros; estos valores pueden asignarse a las propiedades `border-top-style`, `border-right-style`, etc.
+    
+- Cada caja tiene un relleno (_padding_), que es la distancia entre el borde y el contenido de la caja; este relleno se define con las propiedades `padding-top`, `padding-right`, etc.
+    
+- Por último, es posible definir los márgenes entre una caja y las cajas de alrededor mediante las propiedades `margin-top`, `margin-right`, etc.
+    
+
+Las separaciones y grosores anteriores se definen en base a las múltiples unidades de medida permitidas en CSS, como _píxeles_ o _ems_. Si el valor es cero, no es necesario indicar la unidad de medida (0 píxeles y 0 _ems_ es lo mismo en este caso).
+
+Existen formas compactas de definir algunas de las propiedades anteriores. Así, la propiedad `padding: 3em 2em 1em 0` establece el relleno, por este orden, superior, derecho, inferior e izquierdo; la propiedad `padding: 2em 1em` establece los rellenos superior e inferior (rellenos verticales) a `2em` y el relleno derecho e izquierdo (rellenos horizontales) a `1em`; si solo tiene un valor, la propiedad `padding: 2em` establece todos los rellenos a `2em`. La propiedad `margin` puede tener un número variable de valores, al igual que `padding` y con la misma semántica. Existe también una propiedad para dar valor al grosor de varios bordes a la vez, pero no es `border` (un error bastante común), sino `border-width`. La propiedad `border` a secas cambia el grosor de todos los bordes, su estilo y su color a la vez, como en `border: 1px solid blue`.
+
+![[Pasted image 20240920102742.png]]
+![[Pasted image 20240920102759.png]]
+
+De paso, hemos hecho que las medidas de todas las cajas se determinen usando el criterio `border-box`, lo que también constituye una buena práctica. Con el criterio por defecto, `content-box`, si se define el ancho de una caja en 100 píxeles, por ejemplo, la subcaja del contenido del elemento tendrá 100 pixeles de ancho y el ancho de cualquier borde o relleno especificado se sumará al ancho final reflejado; es por ello que las cajas del ejemplo anterior tiene tamaños diferentes. Esto provocaba hace años que a menudo los desarrolladores tuvieran que andar restando al ancho total deseado las medidas del borde y el relleno de cara a obtener el valor adecuado del atributo `width`. Con el valor `border-box` de la propiedad `box-sizing` la caja completa tendrá 100 píxeles de ancho y, si hay borde o relleno, la subcaja de contenido reducirá su tamaño para que el ancho final mostrado para la caja sea de 100 píxeles. Observa que los márgenes no modifican la caja con uno u otro valor de la propiedad, ya que no definen en sí propiedades de la caja del contenido sino del espacio entre ella y las cajas adyacentes.
+
+#### Posicionamiento
+
+Las opciones anteriores son bastante limitadas y es habitual que necesitemos más libertad a la hora de distribuir el contenido de los elementos en una página web. Una de las formas básicas de conseguirlo es a través del atributo `position`, que puede tener los valores `static`, `relative`, `absolute`, `fixed` y `sticky`.
+
+#### Posicio
