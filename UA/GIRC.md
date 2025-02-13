@@ -13,31 +13,34 @@ para hacer persistente el reenvio de IP despues del reinicio. Luego he ejecutado
 - sudo sysctl -p /etc/sysctl.d/custom-ip-forwarding.conf 
 para aplicar el archivo de configuracion.
 Ejecuto el comando netstat -i para ver las interfaces de red, se puede ver que hay creadas dos interfaces, la eth0 y la loopback.
+![[Pasted image 20250213095128.png]]
 Ahora hay que configurar la NAT. Para esto ejecuto los siguientes comandos:
-sudo /sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-sudo /sbin/iptables -F FORWARD
-sudo service iptables save
+- sudo /sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+- sudo /sbin/iptables -F FORWARD
+- sudo service iptables save
 
 He configurado los grupos de seguridad de las subredes privadas, para las reglas de entrada y salida he puesto que se admita todo el trafico desde el router.
 Para la subred publica, he puesto que permita el acceso desde las subredes privadas y desde internet. Para las reglas de salida, que pueda enviar a las subredes privadas y a internet.
 
-He creado tambien unas tablas de ruta para cada subred. En la tabla de la subred de la red privada A he puesto dos entradas, una para la puerta de enlace por defecto que apunta al router y otra para conectarse a la instancia B que tambien apunta al router. En la tabla de la subred privada B es lo mismo pero para conectarse a la instanca A.
-En la tabla del router tiene una entrada solo que es para salir a internet.
+He creado tambien unas tablas de ruta para cada subred. En la tabla de la subred de la red privada A he puesto dos entradas, una para la puerta de enlace por defecto que apunta al router y otra para conectarse a la instancia B que tambien apunta al router. En la tabla de la subred privada B es lo mismo pero para conectarse a la instancia A.
+En la tabla del router tiene una entrada solo que es para salir a internet, ya que las redes A y B estan conectadas directamente al router.
 
 Ahora voy a editar los ficheros /etc/hosts de las 3 instancias para añadir un nombre de dominio a las ips del router, NodeA y NodeB.
-
+![[Pasted image 20250213095400.png]]
+Ahora podré usar NodeA en lugar de su IP, también para NodeB.
 1. Para borrar las tablas nat y filter se ejecuta los siguientes comandos:
-- sudo iptables -t filter -F -> el -F siguifica "flush" que hace que se eliminen todas las reglas d la tabla especificada.
+- sudo iptables -t filter -F -> el -F significa "flush" que hace que se eliminen todas las reglas de la tabla especificada.
 - sudo iptables -t nat -F
 
 2. Para establecer por defecto DROP en las reglas de la tabla filter tendremos que realizar los siguientes comandos:
-sudo iptables -t filter -P INPUT DROP
-sudo iptables -t filter -P FORWARD DROP
-sudo iptables -t filter -P OUTPUT DROP
+- sudo iptables -t filter -P INPUT DROP
+- sudo iptables -t filter -P FORWARD DROP
+- sudo iptables -t filter -P OUTPUT DROP
 
 Tuve que permitir el acceso por ssh en la tabla filter para no desconectarme de la instancia con los siguientes comandos: 
 - sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
-- sudo iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+- sudo iptables -A OUTPUT -p tcp --dport 22 -m state --state ESTABLISHED -j ACCEPT
+Esto hace que permita las nuevas conexiones y las conexiones ya establecidas por el puerto 22, también permite las respuestas por el puerto 22 de las conexiones ya establecidas.
 
 Lo que hacen estos comandos es; el primero, permite nuevas conexiones y respuestas del servidor y el segundo, permite el trafico de salida de la conexión establecida. Para borrar una entrada de la iptable: 
 - sudo iptables -D INPUT <número_de_línea>
