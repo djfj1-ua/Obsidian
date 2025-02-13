@@ -5,6 +5,13 @@ Ahora, creare las subredes. Son 2 privadas y una pública. Las subredes tendrán
 ![[Pasted image 20250207184440.png]]
 Tenemos que crear las 3 instancias EC2, hay que crear una en la subred privada 1, otra en la subred privada 2 y otra en la subred pública. En la instancia de la subred pública hay que habilitar que se genere la ip pública automáticamente.
 ![[Pasted image 20250213093454.png]]
+
+He configurado los grupos de seguridad de las subredes privadas, para las reglas de entrada y salida he puesto que se admita todo el trafico desde el router.
+Para la subred publica, he puesto que permita el acceso desde las subredes privadas y desde internet. Para las reglas de salida, que pueda enviar a las subredes privadas y a internet.
+
+He creado también unas tablas de ruta para cada subred. En la tabla de la subred de la red privada A he puesto dos entradas, una para la puerta de enlace por defecto que apunta al router y otra para conectarse a la instancia B que también apunta al router. En la tabla de la subred privada B es lo mismo pero para conectarse a la instancia A.
+En la tabla del router tiene una entrada solo que es para salir a internet, ya que las redes A y B están conectadas directamente al router.
+
 He accedido a mi maquina de ruter por ssh habilitando el trafico ssh desde mi IP, he ejecutado el comando sudo yum install iptables-services -y para descargar iptables y poder usarlas.
 Activo el iptables con los comandos: 
 - sudo systemctl enable iptables sudo systemctl start iptables.
@@ -16,15 +23,10 @@ para aplicar el archivo de configuracion.
 Ejecuto el comando netstat -i para ver las interfaces de red, se puede ver que hay creadas dos interfaces, la eth0 y la loopback.
 ![[Pasted image 20250213095128.png]]
 Ahora hay que configurar la NAT. Para esto ejecuto los siguientes comandos:
-- sudo /sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-- sudo /sbin/iptables -F FORWARD
+- sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+- sudo iptables -F FORWARD
 - sudo service iptables save
-
-He configurado los grupos de seguridad de las subredes privadas, para las reglas de entrada y salida he puesto que se admita todo el trafico desde el router.
-Para la subred publica, he puesto que permita el acceso desde las subredes privadas y desde internet. Para las reglas de salida, que pueda enviar a las subredes privadas y a internet.
-
-He creado tambien unas tablas de ruta para cada subred. En la tabla de la subred de la red privada A he puesto dos entradas, una para la puerta de enlace por defecto que apunta al router y otra para conectarse a la instancia B que tambien apunta al router. En la tabla de la subred privada B es lo mismo pero para conectarse a la instancia A.
-En la tabla del router tiene una entrada solo que es para salir a internet, ya que las redes A y B estan conectadas directamente al router.
+El primer comando permite que una red privada pueda acceder a internet a través de una única IP pública.
 
 Ahora voy a editar los ficheros */etc/hosts* de las 3 instancias para añadir un nombre de dominio a las ips del router, NodeA y NodeB.
 ![[Pasted image 20250213095400.png]]
