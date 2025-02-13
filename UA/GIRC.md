@@ -45,6 +45,9 @@ Tuve que permitir el acceso por ssh en la tabla filter para no desconectarme de 
 
 Esto hace que permita las nuevas conexiones y las conexiones ya establecidas por el puerto 22, también permite las respuestas por el puerto 22 de las conexiones ya establecidas.
 
+También añadiré una entrada en la tabla OUTPUT para permitir los mensajes de vuelta para las conexiones por ssh a las máquinas de las redes privadas:
+- sudo iptables -I OUTPUT -p tcp --dport 22 -j ACCEPT
+
 Para borrar una entrada de la iptable: 
 - sudo iptables -D INPUT <número_de_línea>
 
@@ -92,4 +95,4 @@ Para permitir tambien el trafico HTTP desde el router:
 - sudo iptables -A FORWARD -j LOG --log-prefix "***** GIRC 2023: PRACTICA 1 - DESECHADO ***** " --log-level 4
 
 No se porque pero se corta la cadena que aparece en el enunciado.
-Las iptables del Router quedarían de la siguiente manera:![[Pasted image 20250213100400.png]]
+Las iptables del Router quedarían de la siguiente manera:![[Pasted image 20250213101413.png]]
